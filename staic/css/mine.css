@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+.mine-container {
+    margin-bottom: 7px;
+    width: 100%;
+    height: auto;
+    background: #fff;
+}
+
+/*个人中心背景*/
+.mine-bg {
+    position: relative;
+    width: 100%;
+    height: 3.27rem;
+    background-image: url("../images/mine_bg.png");
+    background-size: cover;
+}
+
+/*用户头像*/
+.user-image {
+    position: absolute;
+    bottom: 0;
+    left: .63rem;
+}
+
+.user-image > img {
+    width: 1.85rem;
+    height: 1.85rem;
+    border-radius: 50%;
+    box-shadow: 1px 1px 12px 1px rgba(255, 136, 130, 0.6);;
+}
+
+/*用户姓名*/
+.user-name {
+    margin-left: 1.2rem;
+    height: .9rem;
+    line-height: .9rem;
+    font-size: .3rem;
+    color: #333;
+}
+
+.user-info {
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 7.10rem;
+    background-color: #fff;
+    box-shadow: 5px 9px 22px 2px rgba(255, 196, 193, .5);
+}
+
+.user-info>li{
+    position: relative;
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .28rem;
+    color: #666;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.user-info>li:last-child{
+    border: none;
+}
+
+.user-info>li>i{
+    margin-right: .25rem;
+    margin-bottom: -.15rem;
+    display: inline-block;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+}
+
+.telephone-icon{
+    background: #f77866 url("../images/tel.png") center no-repeat;
+    background-size: 43%;
+}
+
+.idcard-icon{
+    background:#ffc157 url("../images/id-card.png") center no-repeat;
+    background-size: 50%;
+}
+
+.ownerAgent-icon{
+    background: #9380ad url("../images/adviser.png") center no-repeat;
+    background-size: 45%;
+}
+
+.rightCount-icon{
+    background: #f7a766 url("../images/rengou.png") center no-repeat;
+    background-size: 60%;
+}
+
+.info{
+    float: right;
+    font-size: .28rem;
+    color: #999;
+}
+
+.logout{
+    width: 100%;
+    height: 1rem;
+    font-size: .3rem;
+    color: #666666;
+    background-color: #eeeeee;
+    box-shadow: 0 2px 3px 0
+    rgba(211, 217, 219, 0.5);
+    border-radius: 25px;
+}

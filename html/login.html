@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/> <!--删除默认的苹果工具栏和菜单栏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><!--隐藏状态栏-->
+    <meta name="format-detection" content="telephone=no, email=no"/> <!--忽略将识别电话和邮箱-->
+    <title>登陆</title>
+    <script type="text/javascript" src="../staic/ydui/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" href="../staic/ydui/css/ydui.css">
+    <link rel="stylesheet" href="../staic/css/reset.css">
+    <link rel="stylesheet" href="../staic/css/login.css">
+</head>
+<body>
+<section class="g-flexview">
+    <!--内容-->
+        <!--背景图-->
+        <div class="bg">
+            <img class="w100p" src="../staic/images/bg_login.png" alt="beijing">
+            <div class="logo">
+                <img class="logo_icon" src="../staic/images/logo_01.png" alt="">
+                <img class="logo_text w100p" src="../staic/images/logo_02.png" alt="">
+            </div>
+        </div>
+        <!--登陆框-->
+        <div class="content">
+            <!-- 输入框 -->
+            <!--<form action="./login.html" method="post">-->
+                <!--手机号-->
+                <label for="telephone" class="label">
+                    <img class="input-icon" src="../staic/images/phone.png" alt="phone">
+                    <div class="inputBox">
+                        <input type="number" name="telephone" id="telephone" placeholder="请输入手机号">
+                    </div>
+                </label>
+                <!--身份证-->
+                <label for="id_card" class="label">
+                    <img class="input-icon" src="../staic/images/id_card.png" alt="id_card">
+                    <div class="inputBox">
+                        <input type="number" name="id_card" id="id_card" maxlength=""  placeholder="请输入身份证号">
+                    </div>
+                </label>
+                <!--验证码-->
+                <label for="verify" class="label">
+                    <img class="input-icon" src="../staic/images/verifyCode.png" alt="verifyCode">
+                    <div class="inputBox">
+                        <input type="number" name="verify" id="verify" maxlength="6" placeholder="请输入验证码">
+                    </div>
+                    <button type="button" class="getVerify but" id="J_GetCode">获取验证码</button>
+                </label>
+                <span class="psdTip"></span>
+                <!--密码-->
+                <!--<label for="password" class="label nomargin">-->
+                    <!--<img src="../staic/images/password.png" alt="password">-->
+                    <!--<div class="inputBox">-->
+                        <!--<input type="password" name="password" id="password" placeholder="请输入密码">-->
+                        <!--<i class="showTip hide eyeHide"></i>-->
+                    <!--</div>-->
+                <!--</label>-->
+                <!--<span class="psdTip"></span>-->
+
+                <!-- 按钮 -->
+                <button type="submit" class="login_but but">登录</button>
+            <!--</form>-->
+        </div>
+</section>
+<!--尾部js-->
+<script type="text/javascript" src="../staic/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../staic/ydui/js/ydui.js"></script>
+<script type="text/javascript" src="../staic/js/public.js"></script>
+<script type="text/javascript" src="../staic/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/> <!--删除默认的苹果工具栏和菜单栏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><!--隐藏状态栏-->
+    <meta name="format-detection" content="telephone=no, email=no"/> <!--忽略将识别电话和邮箱-->
+    <title>九邑在线开盘</title>
+    <script type="text/javascript" src="../staic/ydui/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" href="../staic/ydui/css/ydui.css">
+    <link rel="stylesheet" href="../staic/css/reset.css">
+    <link rel="stylesheet" href="../staic/css/home.css">
+    <link href="https://cdn.bootcss.com/Swiper/4.2.0/css/swiper.min.css" rel="stylesheet">
+    <style>
+        /*户型图分页器*/
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 4px;
+            border-radius: 0;
+            background-color: rgba(212, 213, 213, 0.6);
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #fe7e4e;
+        }
+    </style>
+</head>
+<body>
+<section class="g-flexview">
+    <!--头部-->
+    <header class="m-navbar nomargin">
+        <a href="./index.html" class="navbar-item">
+            <i class="back-ico"></i>
+        </a>
+        <div class="navbar-center">
+            <span class="navbar-title rockNum-title"></span>
+        </div>
+    </header>
+
+    <!--内容-->
+    <div class="g-scrollview">
+        <!-- banner图 -->
+        <div class="home-banner">
+            <img class="projectImg" src="" alt="">
+            <div class="kaipan-time">
+                <p class="time-item">开盘时间</p>
+                <p class="time-item"><b class="year"></b>年<b class="month"></b>月<b class="day"></b>日</p>
+                <p class="time-item"><b class="hour"></b>时<b class="minute"></b>分<b class="second"></b>秒</p>
+            </div>
+        </div>
+        <!--楼盘状态-->
+        <div class="banner nopdbottom">
+            <!-- 显示楼盘名称，状态 -->
+            <div class="loupan-indication">
+                <div class="loupanDetails">
+                    <span class="loupanName"></span>
+                    <!--<span class="loupanKind">住宅</span>-->
+                    <!--<span class="loupanStatus">即将开盘</span>-->
+                </div>
+                <div class="type-tag">
+                </div>
+            </div>
+            <div class="house-adress">
+                <i class="location"></i>
+                <span class="loupan-adress"></span>
+            </div>
+        </div>
+        <!--楼盘信息-->
+        <div class="banner">
+            <h2 class="banner-title">楼盘信息</h2>
+            <ul class="loupan-info">
+                <li class="info-tit">项目地址：<span class="build-address"></span></li>
+                <li>开发商信息：<span class="developer"></span></li>
+                <li>物业管理：<span class="manager"></span></li>
+                <li>楼盘总户数：<span class="households"></span></li>
+                <li>用地面积：<span class="land-area"></span></li>
+            </ul>
+        </div>
+        <!--户型信息-->
+        <div class="banner">
+            <h2 class="banner-title">户型信息</h2>
+            <div class="ht-container swiper-container">
+                <div class="ht-content swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!--开盘规则-->
+        <div class="banner">
+            <h2 class="banner-title">开盘规则</h2>
+            <div class="kaipan-rules">
+                <p>
+                    本次开盘采用“秒开”规则，用户在开放选房后，可以将房源加入购物车，购物车中房源最大可加入5套房源，提交订单后不可撤单，可提交订单中房源数量是根据您的认筹笔数决定，如有更多的问题或需要其他帮助请联系本楼盘，本次开盘采用“秒开”规则，用户在开放选房后，可以将房源加入购物车，购物车中房源最大可加入5套房源，提交订单后不可撤单，可提交订单中房源数量是根据您的认筹笔数决定，如有更多的问题或需要其他帮助请联系本楼盘。
+                </p>
+            </div>
+        </div>
+        <!--联系方式-->
+        <div class="banner">
+            <h2 class="banner-title">联系方式</h2>
+            <div class="contact">
+                <div class="contact-item">
+                    您的置业顾问：<span class="dynatown">18305514658</span>
+                    <a class="but telbut" href="tel:18305514658">打电话</a>
+                </div>
+                <div class="contact-item">
+                    楼盘前台固话：<span class="receptionist">0571-85152408</span>
+                    <a class="but telbut" href="tel:0571-85152408">打电话</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部导航 -->
+    <footer class="bottom">
+        <button type="button" class="but rockNum">
+            开始选房
+        </button>
+    </footer>
+</section>
+<!--尾部js-->
+<script type="text/javascript" src="../staic/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../staic/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../staic/ydui/js/ydui.js"></script>
+<script src="https://cdn.bootcss.com/Swiper/4.2.0/js/swiper.min.js"></script>
+<script type="text/javascript" src="../staic/js/public.js"></script>
+<script type="text/javascript" src="../staic/js/home.js"></script>
+</body>
+<script>
+    $(function () {
+        //禁止遮罩层滑动
+        $(".mask").on('touchmove', function (e) {
+            e.preventDefault();  //阻止默认行为
+        });
+
+        // swiper配置
+        var mySwiper = new Swiper('.swiper-container', {
+            slidesPerView: 2.5,
+            pagination: {el: '.swiper-pagination'},
+            initialSlide :0,
+            observer:true,//修改swiper自己或子元素时，自动初始化swiper
+            observeParents:true//修改swiper的父元素时，自动初始化swiper
+        });
+
+        $(".rockNum").click(function () {
+            window.location.href = "house.html";
+        })
+
+    });
+
+</script>
+</html>

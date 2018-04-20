@@ -1,0 +1,116 @@
+@charset "utf-8";
+body{
+    background: #fff;
+}
+.bg{
+    position: relative;
+    width: 100%;
+}
+.logo{
+    width: 130px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -55px;
+    margin-left: -65px;
+}
+
+.logo_icon{
+    margin: 0 auto;
+    margin-bottom: 5px;
+    width: 116px;
+}
+
+.content{
+    text-align: center;
+    margin-top: 1.1rem;
+    width: 100%;
+    height:auto;
+}
+
+.label{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: .7rem;
+}
+.input-icon{
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    bottom: -3px;
+}
+
+label[for="telephone"] img{
+    width: 12px;
+}
+
+label[for="id_card"] img{
+    width: 20px;
+}
+
+label[for="verify"] img{
+    width: 18px;
+}
+
+.inputBox{
+    display: inline-block;
+    text-align: left;
+    width: 250px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.inputBox>input{
+    width: 150px;
+    height: 30px;
+}
+/*身份证*/
+label[for="id_card"] input{
+    width: 200px;
+}
+
+/*验证码*/
+label[for="verify"] .inputBox{
+    width: 135px;
+    margin-right: 10px;
+}
+
+.getVerify{
+    font-size: 12px;
+    width: 100px;
+    height: 30px;
+}
+
+.btn-disabled{
+    background: #eee;
+    box-shadow: 0 2px 3px 0
+    rgba(211, 217, 219, 0.6)!important;
+}
+
+.psdTip{
+    display: block;
+    color: #ff6161;
+}
+
+.showTip{
+    margin-left: 50px;
+    display: inline-block;
+    width: 26px;
+}
+
+/*眼睛*/
+/*.eyeShow{*/
+    /*height: 18px;*/
+    /*background: url("../images/eye_open.png") no-repeat center;*/
+    /*background-size: contain;*/
+/*}*/
+/*.eyeHide{*/
+    /*height: 13px;*/
+    /*background: url("../images/eye_close.png") no-repeat center;*/
+    /*background-size: contain;*/
+/*}*/
+
+.login_but{
+    margin-top: 0.5rem;
+    width: 301px;
+    height: 50px;
+}

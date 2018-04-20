@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/> <!--删除默认的苹果工具栏和菜单栏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><!--隐藏状态栏-->
+    <meta name="format-detection" content="telephone=no, email=no"/> <!--忽略将识别电话和邮箱-->
+    <title>九邑在线开盘</title>
+    <script type="text/javascript" src="../staic/ydui/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" href="../staic/ydui/css/ydui.css">
+    <link rel="stylesheet" href="../staic/css/reset.css">
+    <link rel="stylesheet" href="../staic/css/home.css">
+    <link rel="stylesheet" href="../staic/css/house.css">
+    <link href="https://cdn.bootcss.com/Swiper/4.2.0/css/swiper.min.css" rel="stylesheet">
+</head>
+<body>
+<section class="g-flexview">
+    <!--头部-->
+    <header class="m-navbar nomargin">
+        <!--javascript:history.go(-1)-->
+        <a href="./house.html" class="navbar-item">
+            <i class="back-ico"></i>
+        </a>
+        <div class="navbar-center">
+            <span class="navbar-title">详情</span>
+        </div>
+    </header>
+
+    <!--内容-->
+    <div class="g-scrollview">
+        <!-- banner图 -->
+        <div class="home-banner">
+            <div class="hd-container swiper-container">
+                <div class="hd-content swiper-wrapper"></div>
+            </div>
+        </div>
+        <!--房源状态-->
+        <div class="banner pt15">
+            <!-- 显示楼盘名称，状态 -->
+            <div class="house-indication">
+                <span class="houseName"></span>
+                <div class="sold"><i></i><span class="addCartCount"></span></div>
+                <div class="type-tag">
+                    <span class="house-modelName tag"></span>
+                    <span class="house-modelType tag"></span>
+                </div>
+            </div>
+            <!--楼盘信息-->
+            <ul class="houseInfo bdr1">
+                <li><span class="houseTotal"></span>总价</li>
+                <li><span class="builtArea"></span>建筑面积</li>
+                <li><span class="builtUnitPrice"></span>建筑单价</li>
+                <li><span class="orientation"></span>朝向</li>
+                <li><span class="floorIndex"></span>楼层</li>
+                <li><span class="decorateMode"></span>装修情况</li>
+            </ul>
+        </div>
+        <!--开盘规则-->
+        <div class="banner">
+            <h2 class="banner-title">户型介绍</h2>
+            <div class="houseIntroduce"></div>
+        </div>
+        <!--刷新按钮-->
+        <div class="refresh"><img src="../staic/images/refresh.png" alt="refresh"></div>
+
+        <div class="mask">
+            <!--底部弹出框-->
+            <div class="house-dialog hide">
+                <!-- 显示楼盘名称，状态 -->
+                <div class="dialog-top">
+                    <span class="houseName"></span>
+                    <span class="check-details">查看详情</span>
+                </div>
+                <div class="dialog-middle">
+                    <span class="typeNum"></span>
+                    <span class="houseType"></span>
+                    <span class="houseArea"></span>
+                    <span class="unitPrice"></span>
+                </div>
+                <p class="price"><span class="price-icon">￥</span><span class="house-price"></span>万</p>
+                <div class="dialog-bottom">
+                    <button type="button" class="but addCart">加入购物车</button>
+                    <button type="button" class="buyHouse">立即购买<span class="buy-order">（未开放）</span></button>
+                    <button type="button" class="but buyHouse-active hide">开始抢房<span class="buy-order">(您当前排在<b class="orderNum"></b>位)</span></button>
+                </div>
+                <div class="close house-close"></div>
+            </div>
+
+            <!--弹出框 去购物车-->
+            <div class="houseDetail-dialog houseToCart hide">
+                <div class="house-content">
+                <span class="house-tip">
+                    加入购物车成功
+                </span>
+                    <button class="cancel house-cancel">好的</button>
+                    <a href="./shopCart.html">
+                        <button class="but toShopCart">去购物车</button>
+                    </a>
+                </div>
+                <div class="close houseDetail-close"></div>
+            </div>
+
+            <!--立即购买弹出框-->
+            <div class="dealAgreement hide">
+                <div class="agreement-content">
+                    <p class="dealHouseName"></p>
+                    <p class="dealHousePrice"><span class="price-icon">￥</span><span class="dealHouse-price"></span>万</p>
+                    <div class="dealHouseInfo">
+                        <span class="typeNum"></span>
+                        <span class="houseType"></span>
+                        <span class="houseArea"></span>
+                        <span class="unitPrice"></span>
+                    </div>
+                    <p class="houseAgreement">
+                        <input type="checkbox" id="agreement" class="agreement" name="agreement">
+                        <label class="isAgree" for="agreement">我已阅读选房须知</label>
+                    </p>
+                    <div class="houseAgreement-btns">
+                        <button class="cancel deal-cancel">取消</button>
+                        <button class="but confirm-agreement straightDeal">确定</button>
+                    </div>
+                </div>
+                <div class="close dealAgreement-close"></div>
+            </div>
+
+            <!--弹出框去订单-->
+            <div class="houseDetail-dialog houseToOrder hide">
+                <div class="house-content">
+                <span class="house-tip">
+                    购买成功
+                </span>
+                    <button class="cancel house-cancel">好的</button>
+                    <a href="./order.html">
+                        <button class="but toShopCart">查看订单</button>
+                    </a>
+                </div>
+                <div class="close houseDetail-close"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部导航 -->
+    <footer class="bottom">
+        <button type="button" class="but addCart">加入购物车</button>
+        <button type="button" class="buyHouse hide">立即购买<span class="buy-order">（未开放）</span></button>
+        <button type="button" class="but buyHouse-active hide">开始抢房<span class="buy-order">(您当前排在<b class="orderNum"></b>位)</span></button>
+    </footer>
+</section>
+<!--底部js-->
+<script type="text/javascript" src="../staic/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../staic/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../staic/ydui/js/ydui.js"></script>
+<script src="https://cdn.bootcss.com/Swiper/4.2.0/js/swiper.min.js"></script>
+<script type="text/javascript" src="../staic/js/public.js"></script>
+<script type="text/javascript" src="../staic/js/house.js"></script>
+</body>
+<script>
+    $(function () {
+        $(".mask").on('touchmove', function (e) {
+            e.preventDefault();  //阻止默认行为
+        });
+
+        //获取房源详情
+        Product_queryCartCount();
+
+        // swiper配置
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay:true,
+            loop : true,
+            observer:true,//修改swiper自己或子元素时，自动初始化swiper
+            observeParents:true//修改swiper的父元素时，自动初始化swiper
+        });
+    })
+</script>
+</html>

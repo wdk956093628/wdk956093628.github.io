@@ -1,0 +1,528 @@
+@charset "utf-8";
+
+/*首页banner图*/
+.home-banner {
+    position: relative;
+    width: 100%;
+    height: 4.8rem;
+}
+
+.home-banner img{
+    width: 100%;
+    height: 100%;
+}
+
+.kaipan-time {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.time-item {
+    margin-top: 0.28rem;
+    margin-left: 0.5rem;
+    display: inline-block;
+    height: 0.44rem;
+    font-size: 0.22rem;
+    line-height: 0.44rem;
+    text-align: center;
+    color: #fff;
+}
+
+.time-item b {
+    font-size: .29rem;
+}
+
+/*开盘时间*/
+.time-item:nth-child(1) {
+    font-size: 0.24rem;
+}
+
+.time-item:nth-child(1)::before {
+    content: "";
+    display: inline-block;
+    margin-left: -0.2rem;
+    margin-right: 0.2rem;
+    width: 0.24rem;
+    height: 0.23rem;
+    background: url("../images/cloc.png");
+    background-size: cover;
+}
+
+/*年月日*/
+.time-item:nth-child(2) {
+    width: 2.4rem;
+    background-color: #fe7e4e;
+}
+
+/*时分秒*/
+.time-item:nth-child(3) {
+    width: 2.02rem;
+    background-color: #fe7e4e;
+}
+
+.time-item:nth-child(3)::before {
+    display: inline-block;
+    content: "";
+    margin-left: -0.55rem;
+    margin-right: 0.55rem;
+    width: 6px;
+    height: 1px;
+    vertical-align: middle;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+.banner {
+    position: relative;
+    margin-bottom: 0.15rem;
+    padding: 0 15px 17px 15px;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    box-shadow: 0px 3px 2px 0px rgba(244, 246, 246, 0.75);
+}
+
+.banner > h2 {
+    line-height: 1.2rem;
+}
+
+.banner-title {
+    position: relative;
+    margin-bottom: 0.3rem;
+    width: 100%;
+    height: 1.05rem;
+    color: #333;
+    box-shadow: inset 0 -1px 1px -1px #ddd;
+}
+
+/* 楼盘名称 状态 */
+.loupan-indication {
+    padding-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.loupanDetails {
+    position: relative;
+    width: 100%;
+    height: .8rem;
+    line-height: .8rem;
+}
+
+.loupanName {
+    font-size: .34rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.loupanKind {
+    margin-left: .15rem;
+    display: inline-block;
+    width: .59rem;
+    height: .34rem;
+    font-size: .24rem;
+    text-align: center;
+    line-height: .34rem;
+    color: #ff8416;
+    background-color: rgba(255, 132, 22, .1);
+    border-radius: 2px;
+}
+
+/*开盘状态*/
+.loupanStatus {
+    position: absolute;
+    right: 0;
+    font-size: .3rem;
+    font-weight: bold;
+    color: #ff5656;
+}
+
+.type-tag {
+    width: 100%;
+    height: .7rem;
+    line-height: .7rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 1px 3px;
+    margin-right: .16rem;
+    text-align: center;
+    line-height: .4rem;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.tag:first-child {
+    color: #ff6262;
+    background-color: rgba(255, 99, 99, .08);
+}
+
+.tag:nth-child(2) {
+    color: #fe7e4e;
+    background-color: rgba(254, 126, 78, .08);
+}
+
+.tag:nth-child(3) {
+    color: #f073ff;
+    background-color: rgba(240, 114, 255, .08);
+}
+
+.house-adress {
+    width: 100%;
+    height: .96rem;
+    line-height: .96rem;
+    box-shadow: inset 0 1px 1px -1px #ededed;
+}
+
+.location {
+    margin-bottom: -1px;
+    display: inline-block;
+    width: .22rem;
+    height: .26rem;
+    background: url("../images/location.png") no-repeat;
+    background-size: cover;
+}
+
+.house-adress > span {
+    margin-left: .1rem;
+    font-size: .28rem;
+    color: #666666;
+}
+
+/* 选房顺序 */
+.sequence {
+    width: 100%;
+    height: .7rem;
+    line-height: .7rem;
+    background: url("../images/Choice_order.png") no-repeat;
+    background-size: cover;
+}
+
+.sequence b {
+    font-size: .35rem;
+}
+
+.sequence span:first-child {
+    margin-right: 33%;
+    font-weight: bold;
+    font-size: .28rem;
+    font-style: italic;
+    color: #333;
+}
+
+.sequence span:last-child {
+    font-size: .24rem;
+    color: #fff;
+}
+
+/* 开盘规则 */
+.kaipan-rules {
+    text-align: justify;
+    font-size: .26rem;
+    line-height: .46rem;
+    color: #666;
+}
+
+/*楼盘信息*/
+.loupan-info>li{
+    font-size: .27rem;
+    line-height: .6rem;
+    color: #333;
+}
+
+.loupan-info>li>span{
+    font-size: .25rem;
+    color: #666;
+}
+
+/*户型信息*/
+.ht-container {
+    width: 100%;
+    height: 3.5rem;
+    overflow: auto;
+}
+
+
+.ht-item {
+    width: 2.74rem;
+    height: 3.2rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.floor-plans {
+    margin: auto;
+    margin-bottom: 15px;
+    position: relative;
+    width: 2.33rem;
+    height: 1.61rem;
+    background-color: #fff4f4;
+    border-radius: 4px;
+}
+
+.typeCode {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+    font-size: .25rem;
+    font-weight: bold;
+    background-color: #fe7e4e;
+    border-radius: 4px 0 4px 0;
+}
+
+.floor-plans > img {
+    margin-top: 7px;
+    display: inline-block;
+    width: 1.08rem;
+    height: 1.34rem;
+}
+
+.ht-item :nth-child(2) {
+    margin-bottom: 10px;
+    font-size: .24rem;
+    color: #666666;
+}
+
+.ht-item p:last-child {
+    font-size: .22rem;
+    color: #999999;
+}
+
+.houseAmount {
+    font-size: .26rem;
+    color: #f24a61;
+}
+
+/*联系方式*/
+.contact {
+
+}
+
+.contact-item {
+    position: relative;
+    margin-bottom: .2rem;
+    width: 100%;
+    height: .7rem;
+    line-height: .7rem;
+    font-weight: bold;
+    font-size: .26rem;
+    color: #666;
+}
+
+.contact-item > span {
+    font-weight: normal;
+    font-size: .28rem;
+    color: #666;
+}
+
+.telbut {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    width: 1.8rem;
+    height: .6rem;
+    line-height: .65rem;
+    text-align: center;
+    font-size: .26rem;
+    font-weight: normal;
+    color: #fff;
+}
+
+/*立即抢房*/
+.buyHouse {
+    width: 100%;
+    height: 1rem;
+    font-size: .3rem;
+    background-color: #eeeeee;
+    box-shadow: 0 2px 3px 0
+    rgba(211, 217, 219, 0.5);
+    border-radius: 25px;
+}
+
+.rockNum {
+    width: 100%;
+    height: 1rem;
+}
+
+/*底部栏*/
+.bottom {
+    width: 100%;
+    height: 1.4rem;
+    position: relative;
+    z-index: 100;
+    padding: .2rem .3rem;
+    background-color: #fff;
+    box-shadow: 0 -1px 3px 0 rgba(242, 242, 242, .75);
+}
+
+/*摇号成功提示框*/
+
+.rockNumTip {
+    margin: auto;
+    position: fixed;
+    top: 0;
+    bottom: 4.5rem;
+    left: 0;
+    right: 0;
+    width: 5.15rem;
+    height: 5.7rem;
+    z-index: 1000;
+}
+
+.decorate {
+    position: relative;
+    top: .84rem;
+    width: 5.15rem;
+    height: 2.76rem;
+    background: url("../images/rockNum.png") no-repeat;
+    background-size: contain;
+}
+
+.close {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url("../images/close.png");
+    background-size: cover;
+}
+
+.rockNum-content {
+    width: 5.15rem;
+    height: 3.78rem;
+    text-align: center;
+    background-color: #f0f4f5;
+    box-shadow: 0 -5px 6px 1px rgba(208, 71, 60, .2);
+    border-radius: 0 0 3px 3px;
+    border: solid 1px #e5e5e5;
+}
+
+.rockNum-content p:first-child {
+    margin-top: .58rem;
+    font-size: .28rem;
+    color: #ff4d4d;
+}
+
+.rockNum-content p:nth-child(2) {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 29px;
+    font-weight: bold;
+    color: #333;
+}
+
+.toIndex {
+    width: 2.4rem;
+    height: .7rem;
+}
+
+
+/*取消按钮*/
+.cancel {
+    border-radius: 32px;
+    border: solid 1px #bbb;
+}
+
+/*遮罩*/
+.mask {
+    display: none;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 999;
+}
+
+/* 底部导航 */
+
+/*抢购按钮*/
+.snapping-house {
+    position: relative;
+    top: -.5rem;
+    width: 1.16rem;
+    height: 1.16rem;
+    text-align: center;
+    line-height: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-image: linear-gradient(90deg, #f24a61 0%, #fe7e4e 100%), linear-gradient(#56ce21, #56ce21);
+    box-shadow: 0 5px 13px 1px rgba(242, 74, 97, .3);
+    border: solid 4px #ffffff;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+
+.icon {
+    width: .44rem;
+    height: .44rem;
+}
+
+.i-home {
+    background: url("../images/home.png") no-repeat;
+    background-size: contain;
+}
+
+.i-shopcart {
+    background: url("../images/shopcart.png") no-repeat;
+    background-size: contain;
+}
+
+.i-order {
+    background: url("../images/order.png") no-repeat;
+    background-size: contain;
+}
+
+.i-mine {
+    background: url("../images/me.png") no-repeat;
+    background-size: contain;
+}
+
+.tabbar-active .i-home {
+    background: url("../images/home_active.png") no-repeat;
+    background-size: contain;
+}
+
+.tabbar-active .i-shopcart {
+    background: url("../images/shopcart_active.png") no-repeat;
+    background-size: contain;
+}
+
+.tabbar-active .i-order {
+    background: url("../images/order_active.png") no-repeat;
+    background-size: contain;
+}
+
+.tabbar-active .i-mine {
+    background: url("../images/me_active.png") no-repeat;
+    background-size: contain;
+}
+
+/*房源价格*/
+.price {
+    color: #f24a61;
+    font-weight: bold
+}
+
+.price-icon {
+    font-size: .24rem;
+}
+
+.house-price {
+    font-weight: bold;
+    font-size: .32rem;
+}

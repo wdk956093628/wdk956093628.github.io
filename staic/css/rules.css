@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+body{background: #fff;}
+
+.top{
+    margin-bottom: 0.3rem;
+    position: relative;
+    width: 100%;
+    height: 1.02rem;
+    text-align:center;
+    color:#333;
+    font-size:0.32rem;
+    font-weight: bold;
+    line-height: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 10px 0px
+    rgba(228, 228, 228, 0.7);
+}
+.back-ico{
+    position: absolute;
+    left: 0.3rem;
+}
+.back-ico::before{
+    content: '\e607';
+    display: inline-block;
+    font-family: 'YDUI-INLAY';
+    font-size: 0.36rem;
+    color: #5C5C5C;
+}
+
+.kp-container{
+    width: 100%;
+    height: calc(100% - 1.32rem);
+    padding: 0 15px;
+    text-align: center;
+}
+
+.hudie{
+    width: 100%;
+    height: 1.08rem;
+    text-align: center;
+    line-height: 1rem;
+    font-size: 0.3rem;
+    color: #fff;
+    background: url("../images/hudiejie.png");
+    background-size: cover;
+}
+
+.rules-content{
+    margin:0 auto;
+    margin-top: 15px;
+    width: 90%;
+    height: 7.5rem;
+    color: #666;
+    font-size: 0.25rem;
+    line-height: 0.45rem;
+    text-align: justify;
+    overflow:auto;
+    -webkit-overflow-scrolling:touch; /*快速滚动*/
+}
+
+.rockNum{
+    color: #d2d2d2;
+    margin-top: 15px;
+    width: 100%;
+    height: 1rem;
+    background-color: #eeeeee;
+    border-radius: 25px;
+}
+
+.rockNum-active{
+    color: #fff;
+}
+
+.rockTime{
+    font-size: 0.26rem;
+}

@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+/*订单详情*/
+
+/*订单信息*/
+.od-container{
+    width: 100%;
+    height: 100%;
+}
+
+/*认购成功图标*/
+.deal-status {
+    width: 100%;
+    height: 2.8rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.deal-icon {
+    margin: auto;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-size: contain;
+}
+.deal-audit{background-image: url("../images/deal-audit.png")}
+.deal-success{background-image: url("../images/deal-success.png")}
+.deal-fail{background-image: url("../images/deal-fail.png")}
+
+/*成功提示*/
+.deal-tip {
+    display: inline-block;
+    margin-top: .4rem;
+    font-size: 0.27rem;
+    font-weight: bold;
+    color: #333333;
+}
+
+/*详细信息*/
+
+.order-info {
+    width: 100%;
+    height: 3.3rem;
+}
+
+.order-info > li {
+    line-height: 0.6rem;
+    font-size: 0.26rem;
+    color: #666666;
+}
+
+/*撤销订单*/
+.revoke {
+    width: 100%;
+    height: 1rem;
+    font-size: 0.3rem;
+    color: #666666;;
+    background-color: #eeeeee;
+    box-shadow: 0 3px 4px 0 rgba(211, 217, 219, 0.5);
+    border-radius: 50px;
+}
+
+/*撤销订单弹框*/
+
+.revoke-dialog{
+    margin: auto;
+    padding: 0.75rem 0.6rem;
+    position: fixed;
+    top: 0;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    width: 5.15rem;
+    height: 6.23rem;
+    background: url("../images/del-dialog.png");
+    background-size: cover;
+    border-radius: 6px;
+    z-index: 1000;
+}
+
+.revoke-tip {
+    margin: 0.5rem 0;
+    display: block;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.3rem ;
+    color: #333333;
+}
+
+.revoke-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 3.2rem;
+    text-align: center;
+    background-color: #f0f4f5;
+    border-radius: 0px 0px 6px 6px;
+    border: solid 1px #e5e5e5;
+}
+
+.revoke-cancel{
+    margin-right: 30px;
+    width: 1.6rem;
+    height: 0.7rem;
+    font-size: 0.3rem;
+}
+
+.revoke-sure{
+    width: 1.6rem;
+    height: 0.7rem;
+    font-size: 0.3rem;
+    color: #fff;
+    background-image: linear-gradient(90deg,
+    #f24a61 0%,
+    #fe7e4e 100%),
+    linear-gradient(
+            #bbbbbb,
+            #bbbbbb);
+    box-shadow: 0px 2px 7px 1px
+    rgba(242, 74, 97, 0.6);
+    border-radius: 32px;
+}
+
+/*关闭按钮*/
+.revoke-close{
+    top: -0.8rem;
+}

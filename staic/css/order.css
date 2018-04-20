@@ -1,0 +1,378 @@
+@charset "utf-8";
+
+/*购物车&订单*/
+
+
+/*购物车提示*/
+.shopTip,
+.editTip,
+.noCartTip{
+    margin-bottom: 10px;
+    /*margin-left: 15px;*/
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    font-size: 0.24rem;
+    color: #f24a61;
+}
+
+/*购物车复选框*/
+input[name=cartItem]{
+    display: none;
+}
+
+input[name=cartItem] + label{
+    position: relative;
+    top: 24px;
+    left: -30px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #FFF;
+    border: 1px solid #ccc;
+}
+
+input[name=cartItem]:checked + label:after {
+    content: ''; /*勾选符号*/
+    position: absolute;
+    display: block;
+    top: 4px;
+    left: 2px;
+    width: 12px;
+    height: 9px;
+    background: url("../images/checked.png") center;
+    background-size: cover;
+}
+
+.isAgree{
+    position: relative;
+    color: #666;
+}
+input[name=agreement] {
+    display: none;
+}
+
+input[name=agreement] + label:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -20px;
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+    padding: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+input[name=agreement]:checked + label:after {
+    content: '\2714';
+    font-size: 14px;
+    position: absolute;
+    top: -4px;
+    left: -17px;
+    color: #99a1a7;
+}
+
+
+/*楼盘名称*/
+.shopName {
+    font-weight: bold;
+    font-size: .29rem;
+    color: #333;
+}
+
+
+/*购物车楼盘状态*/
+.saleStatus {
+    padding-top: 3px;
+    position: absolute;
+    top: 19px;
+    right: 15px;
+    display: inline-block;
+    width: 1.4rem;
+    height: 0.52rem;
+    text-align: center;
+    line-height: 0.5rem;
+    font-weight: bold;
+    font-size: 0.28rem;
+    border-radius: 2px;
+}
+
+
+/*可售*/
+.sellIn {
+    color: #ff8416;
+    background-color: rgba(255, 132, 22, .2);
+}
+
+/*待售*/
+.sellwait{
+    color: #fff;
+    background-color: #70c972;
+    opacity: .75;
+}
+
+/*已售*/
+.sellOut {
+    color: #d2d2d2;
+    background-color: rgba(240, 244, 245, .95);
+}
+
+/*订单楼盘状态*/
+.shopStatus {
+    padding-top: 3px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: inline-block;
+    width: 1.4rem;
+    height: 0.52rem;
+    text-align: center;
+    line-height: 0.5rem;
+    font-weight: bold;
+    font-size: 0.28rem;
+    border-radius: 2px;
+}
+
+/*待审核*/
+.audit {
+    color: #ff8416;
+    background-color: rgba(255, 132, 22, 0.1);
+}
+
+/*认购成功*/
+.subscribed {
+    color: #73da3a;
+    background-color: rgba(115, 218, 58, 0.1);
+}
+
+/*被拒绝*/
+.refused{
+    color: #f24a61;
+    background-color: rgba(242, 74, 97, 0.2);
+}
+
+/*撤单*/
+.revoke{
+    color: #999999;
+    background-color: rgba(58, 58, 58, 0.1);
+}
+
+/*楼盘信息*/
+.shopInfo {
+    font-size: .25rem;
+    line-height: 36px;
+    line-height: 36px;
+    color: #999999;
+}
+
+.shopType::after,
+.shopType::before {
+    content: " ";
+    display: inline-block;
+    width: 0;
+    height: .2rem;
+    border-left: 1px solid #d2d2d2;
+    margin: 0 7px;
+}
+
+/*购物车底部编辑栏*/
+
+/*编辑和完成按钮*/
+.edit, .complete {
+    width: 2.80rem;
+    height: 1rem;
+    font-size: .3rem;
+    border-radius: 49px;
+    border: 1px solid #cccccc;
+}
+
+/*提交和删除*/
+.submit, .del {
+    float: right;
+    width: 2.8rem;
+    height: 1rem;
+    font-size: .3rem;
+}
+
+/*购物车弹框*/
+/*删除*/
+.dealAgreement,
+.del-dialog {
+    margin: auto;
+    padding: .75rem .6rem;
+    position: fixed;
+    top: 0;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    width: 5.15rem;
+    height: 6.23rem;
+    text-align: center;
+    background: url("../images/del-dialog.png");
+    background-size: cover;
+    border-radius: 6px;
+    z-index: 1000;
+}
+
+.del-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 3.2rem;
+    text-align: center;
+    background-color: #f0f4f5;
+    border-radius: 0 0 6px 6px;
+    border: solid 1px #e5e5e5;
+}
+
+.del-shopName {
+    margin: auto;
+    display: block;
+    font-size: .3rem;
+    color: #ffffff;
+}
+
+.del-confirm {
+    margin: auto;
+    padding-top: .8rem;
+    font-size: .3rem;
+    color: #333333;
+}
+
+/*成交协议*/
+.dealAgreement{
+    padding: .75rem 0;
+    width: 5.15rem;
+    height: 6.7rem;
+    background-image: url("../images/deal-agreement.png");
+    background-size: cover;
+}
+
+.dealHouseName{
+    font-size: .32rem;
+    font-weight: bold;
+    color: #fff;
+}
+.dealHousePrice{
+    margin-top: 2.5rem;
+    height: .7rem;
+    font-size: .26rem;
+    font-weight: bold;
+    color: #333;
+}
+.dealHouseInfo{
+    margin-bottom: .1rem;
+    height: .6rem;
+    font-size: .23rem;
+    color: #666;
+}
+
+.typeNum:after,
+.houseType:after,
+.houseArea:after{
+    content: " ";
+    display: inline-block;
+    width: 0;
+    height: 0.2rem;
+    border-left: 1px solid #d2d2d2;
+    margin: 0 5px;
+}
+
+.houseAgreement{
+    font-size: .23rem;
+    margin-bottom: .2rem;
+}
+
+.houseAgreement-btns{
+    width: 100%;
+    padding:0 .6rem;
+}
+
+.confirm-agreement{
+    float: right;
+    width: 1.6rem;
+    height: .7rem;
+    border-radius: 16px;
+}
+/*确认删除*/
+.cancel, .del-sure {
+    margin-top: 0.6rem;
+    float: right;
+    margin-right: 0.7rem;
+    width: 1.45rem;
+    height: 0.64rem;
+    font-size: 0.29rem;
+    border-radius: 32px;
+}
+
+/*取消删除*/
+.cancel {
+    float: left;
+    margin-left: .7rem;
+    border: solid 1px #cccccc;
+}
+
+/*关闭删除弹框*/
+
+.del-close {
+    top: -35px;
+}
+
+.dealAgreement-close{
+    top: -.8rem;
+}
+
+.deal-cancel{
+    margin: 0;
+    width: 1.6rem;
+    height: .7rem;
+    border-radius: 16px;
+    border: solid 1px #bbbbbb;
+}
+
+/*拖动排序*/
+
+/*排序按钮*/
+.sort-but{
+    position: absolute;
+    right: 15px;
+    line-height: .9rem;
+    font-size: .3rem;
+    color: #333;
+}
+
+/*排序图标*/
+.icon-sort{
+    position: absolute;
+    display: none;
+    width: 20px;
+    height: 20px;
+    top: 25px;
+    right: 40px;
+    background: url("../images/sort.png") no-repeat center;
+    background-size: cover;
+}
+
+.sortable-drag{
+    background-color: #f0f0f0;
+    box-shadow: 0px 6px 7px 0px rgba(228, 228, 228, 0.75);
+}
+
+
+@media all and (orientation : landscape) {
+    html{
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10000000;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}

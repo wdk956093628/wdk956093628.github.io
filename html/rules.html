@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/> <!--删除默认的苹果工具栏和菜单栏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><!--隐藏状态栏-->
+    <meta name="format-detection" content="telephone=no, email=no"/> <!--忽略将识别电话和邮箱-->
+    <title>九邑在线开盘</title>
+    <script type="text/javascript" src="../staic/ydui/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" href="../staic/ydui/css/ydui.css">
+    <link rel="stylesheet" href="../staic/css/reset.css">
+    <link rel="stylesheet" href="../staic/css/home.css">
+    <link rel="stylesheet" href="../staic/css/rules.css">
+    <link rel="stylesheet" type="text/css" href="../staic/simditor/styles/simditor.css" />
+</head>
+<body>
+<!--头部-->
+<header class="m-navbar">
+    <a href="./login.html" class="navbar-item">
+        <i class="back-ico"></i>
+    </a>
+    <div class="navbar-center">
+        <span class="navbar-title">开盘规则</span>
+    </div>
+</header>
+<!--内容-->
+<div class="kp-container">
+    <!--蝴蝶结-->
+    <div class="hudie">
+        <span class="kp-name"></span>
+    </div>
+    <!--详情-->
+    <div class="rules-content">
+
+    </div>
+    <!--弹出框-->
+    <div class="mask">
+        <div class="rockNumTip">
+            <div class="decorate">
+            </div>
+            <div class="rockNum-content">
+                <p>摇号成功</p>
+                <p class="rockNum-result"></p>
+                <button type="button" class="but toIndex">开始抢房</button>
+            </div>
+        </div>
+    </div>
+    <!--按钮-->
+    <button type="button" class="rockNum" disabled>
+        我知道了(<span class="rockTime">5</span>s),开始摇号
+    </button>
+</div>
+<script type="text/javascript" src="../staic/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../staic/ydui/js/ydui.js"></script>
+<script type="text/javascript" src="../staic/js/public.js"></script>
+<script type="text/javascript" src="../staic/js/rules.js"></script>
+
+<!--<script type="text/javascript" src="../staic/simditor/scripts/module.min.js"></script>-->
+<!--<script type="text/javascript" src="../staic/simditor/scripts/hotkeys.min.js"></script>-->
+<!--<script type="text/javascript" src="../staic/simditor/scripts/simditor.min.js"></script>-->
+</body>
+<script>
+    $(function () {
+        // var editor = new Simditor({
+        //     textarea: $('#editor'),
+        // });
+    });
+</script>
+</html>

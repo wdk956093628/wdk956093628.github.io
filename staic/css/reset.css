@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+html,body{-webkit-user-select:none;-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;-webkit-user-select:none;-webkit-touch-callout:none;-webkit-touch-callout:none;-webkit-box-sizing: border-box;box-sizing: border-box;overflow: hidden}
+body,button,input,select,textarea {font:14px 'Helvetica Neue',Arial,'Liberation Sans',FreeSans,'Hiragino Sans GB',sans-serif\Microsoft YaHei;}
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {-webkit-text-size-adjust:none;}/*阻止旋转屏幕时自动调整字体大小*/
+textarea{resize:none;}
+input,button{border:none;outline: none;}
+/*取消按钮在inphone上的默认样式*/
+input[type=button]{-webkit-appearance:none;outline:none}
+input::-webkit-input-placeholder{color:#cccccc;font-size:15px; margin-left:140px}
+textarea::-webkit-input-placeholder{color:#F0F0F0;}
+input::-webkit-inner-spin-button {display:none}
+table {border-collapse:collapse;border-spacing:0;}
+th {text-align:inherit;}
+fieldset,img {border:none;}
+abbr,acronym {border:none;font-variant:normal;}
+del {text-decoration:line-through;}
+ol,ul {list-style:none;}
+caption,th {text-align:left;}
+sub,sup {font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
+sup {top:-0.5em;}
+sub {bottom:-0.25em;}
+ins,a,a:hover {text-decoration:none;}
+a:focus,*:focus {outline:none;}
+.clearfix:before,.clearfix:after {content:"";display:table;}
+.clearfix:after {clear:both;overflow:hidden;}
+.clearfix {zoom:1;}
+.clear {clear:both;display:block;font-size:0;height:0;line-height:0;overflow:hidden;}
+body .hide {display:none;}
+.block {display:block;}
+.outL{white-space:normal;word-break:break-all;width:100px;}
+.outH{overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width:100px;}
+/*布局*/
+.fl{float:left;display:inline;}
+.fr{float:right;display:inline;}
+.cb{clear:both;}
+.cl{clear:left;}
+.cr{clear:right;}
+.rel{position:relative;}
+.abs{position:absolute;}
+.tac{text-align:center;}
+.tal{text-align:left;}
+.tar{text-align:right;}
+.dib{display:inline-block;}
+.vab{vertical-align:bottom;}
+.vam{vertical-align:middle;}
+.vat{vertical-align:top;}
+
+/*宽度*/
+.w100p{width:100%}
+.w20p{width:20%;}
+
+/*边距*/
+.m5{margin:5px;}
+.p5{padding:5px;}
+body .mt5{margin-top: 5px;}
+body .pt15{padding-top:17px;}
+body .pb0{padding-bottom: 0}
+body .pl48{padding-left:48px !important;}
+body .nomargin{margin-bottom: 0;}
+body .nopdtop{padding-top: 0;}
+body .nopdbottom{padding-bottom: 0;}
+
+
+.but{
+    font-size: .3rem;
+    line-height: 100%;
+    color: #ffffff;
+    background-image:
+            linear-gradient(90deg, #f24a61 0%, #fe7e4e 100%),
+            linear-gradient(#09c2be, #09c2be);
+    box-shadow: 0px 2px 7px 0px rgba(242, 74, 97, 0.4);
+    border-radius: 25px;}
+
+.bdr1{
+    border-top: 1px solid #eaeaea;
+}

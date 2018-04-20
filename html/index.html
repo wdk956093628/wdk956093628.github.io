@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" /> <!--删除默认的苹果工具栏和菜单栏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /><!--隐藏状态栏-->
+    <meta name="format-detection" content="telephone=no, email=no"/> <!--忽略将识别电话和邮箱-->
+    <title>九邑在线开盘</title>
+    <script type="text/javascript" src="../staic/ydui/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" href="../staic/ydui/css/ydui.css">
+    <link rel="stylesheet" href="../staic/css/reset.css">
+    <link rel="stylesheet" href="../staic/css/home.css">
+</head>
+<body>
+<section class="g-flexview">
+    <!--头部-->
+    <header class="m-navbar nomargin">
+        <div class="navbar-center"><span class="navbar-title">在线开盘</span></div>
+    </header>
+    <!--内容-->
+    <div class="g-scrollview">
+        <!-- banner图 -->
+        <div class="home-banner">
+            <img class="projectImg" src="" alt="">
+            <div class="kaipan-time">
+                <p class="time-item">开盘时间</p>
+                <p class="time-item"><b class="year"></b>年<b class="month"></b>月<b class="day"></b>日</p>
+                <p class="time-item"><b class="hour"></b>时<b class="minute"></b>分<b class="second"></b>秒</p>
+            </div>
+        </div>
+        <!--楼盘状态-->
+        <div class="banner nopdbottom" id="toLoupanDetail">
+            <!-- 显示楼盘名称，状态 -->
+            <div class="loupan-indication">
+                <div class="loupanDetails">
+                    <span class="loupanName"></span>
+                    <!--<span class="loupanKind">住宅</span>-->
+                    <!--<span class="loupanStatus">即将开盘</span>-->
+                </div>
+                <div class="type-tag">
+
+                </div>
+            </div>
+            <div class="house-adress">
+                <i class="location"></i>
+                <span class="loupan-adress"></span>
+            </div>
+        </div>
+        <!--选房顺序-->
+        <div class="banner pt15">
+            <div class="sequence">
+                <span>您的选房顺序</span>
+                <span class="skipMode">第<b class="lineIndex"></b>位</span>
+            </div>
+        </div>
+        <!--开盘规则-->
+        <div class="banner">
+            <h2 class="banner-title">开盘规则</h2>
+            <div class="kaipan-rules">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部导航 -->
+    <footer class="m-tabbar">
+        <a href="./index.html" class="tabbar-item tabbar-active">
+            <span class="tabbar-icon">
+                <i class="icon i-home"></i>
+            </span>
+            <span class="tabbar-txt">首页</span>
+        </a>
+        <a href="./shopCart.html" class="tabbar-item">
+            <span class="tabbar-icon">
+                <i class="icon i-shopcart"></i>
+            </span>
+            <span class="tabbar-txt">购物车</span>
+        </a>
+        <a href="./house.html">
+            <div class="snapping-house">抢房</div>
+        </a>
+        <a href="./order.html" class="tabbar-item">
+            <span class="tabbar-icon">
+                <i class="icon i-order"></i>
+            </span>
+            <span class="tabbar-txt">订单</span>
+        </a>
+        <a href="./mine.html" class="tabbar-item">
+            <span class="tabbar-icon">
+                <i class="icon i-mine"></i>
+            </span>
+            <span class="tabbar-txt">我</span>
+        </a>
+    </footer>
+</section>
+<!--尾部js-->
+<script type="text/javascript" src="../staic/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../staic/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../staic/ydui/js/ydui.js"></script>
+<script type="text/javascript" src="../staic/js/public.js"></script>
+<script type="text/javascript" src="../staic/js/home.js"></script>
+</body>
+</html>
