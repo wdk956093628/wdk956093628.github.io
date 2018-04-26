@@ -160,8 +160,6 @@
     height: .8rem;
     border: 1px solid #caccd3;
     border-radius: 5px;
-    /*background: url("../images/keshou.png");*/
-    /*background-size: cover;*/
 }
 
 .houseNum {
@@ -171,6 +169,14 @@
     text-align: center;
     font-size: .24rem;
 }
+
+.product-row .house-item-active{
+    color: #b2b3b7;
+    background: url("../images/house-hover.png");
+    background-size: cover;
+    border-radius: 3px;
+}
+
 
 /*可售*/
 .keshou {
@@ -250,18 +256,25 @@
 /*查看详情*/
 .check-details {
     position: absolute;
-    top: .2rem;
-    right: 20px;
+    top: -6px;
+    right: -20px;
     vertical-align: middle;
     display: inline-block;
-    width: 1.4rem;
-    height: .6rem;
-    font-size: .24rem;
+    width: 2.8rem;
+    height: 1.2rem;
+    font-size: .48rem;
     color: #666;
-    line-height: .55rem;
+    line-height: 1.2rem;
     text-align: center;
-    border-radius: 13px;
+    border-radius: 52px;
     border: solid 1px #e5e5e5;
+    /*box-shadow: inset 0px -1px 1px -1px #e5e5e5;*/
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+}
+
+.check-details:hover{
+    background: #e5e5e5;
 }
 
 /*房源价格*/
@@ -447,12 +460,17 @@
     height: 1rem;
 }
 
+.buyHouse-Details{
+    width: 4.76rem;
+    height: 1rem;
+}
+
 /*房源弹窗*/
 .houseDetail-dialog {
     margin: auto;
     position: fixed;
     top: 0;
-    bottom: 70px;
+    bottom: 0;
     left: 0;
     right: 0;
     width: 5.7rem;
@@ -466,7 +484,7 @@
 .house-content {
     margin-bottom: 6px;
     margin-left: 13px;
-    padding: 30px;
+    padding: 35px 20px;
     position: absolute;
     bottom: 15px;
     width: 5.15rem;
@@ -479,7 +497,7 @@
     display: block;
     height: 1.2rem;
     line-height: .5rem;
-    font-size: .29rem;
+    font-size: .3rem;
     color: #333;
 }
 
@@ -507,35 +525,38 @@
 /*成交协议*/
 .dealAgreement{
     margin: auto;
-    padding: 0.75rem 0;
     position: fixed;
     top: 0;
-    bottom: 1rem;
+    bottom: 0;
     left: 0;
     right: 0;
     width: 5.15rem;
-    height: 6.7rem;
+    height: 6.5rem;
     text-align: center;
     background-image: url("../images/deal-agreement.png");
     background-size: cover;
     border-radius: 6px;
     z-index: 1000;
 }
-
+.agreement-content{
+    width: 100%;
+    height: 100%;
+}
 .dealHouseName{
+    padding: .75rem .3rem;
+    height: 1rem;
     font-size: .32rem;
     font-weight: bold;
     color: #fff;
 }
 .dealHousePrice{
-    margin-top: 2.5rem;
-    height: .7rem;
+    margin-top: 2rem;
+    height: .6rem;
     font-size: .26rem;
     font-weight: bold;
     color: #333;
 }
 .dealHouseInfo{
-    margin-bottom: .1rem;
     height: .6rem;
     font-size: .23rem;
     color: #666;
@@ -554,11 +575,12 @@
 
 .houseAgreement{
     font-size: .23rem;
-    margin-bottom: .2rem;
+    margin-bottom: .3rem;
 }
 
 .houseAgreement-btns{
     width: 100%;
+    height: .7rem;
     padding:0 .6rem;
 }
 
@@ -575,7 +597,7 @@
 }
 
 .deal-cancel{
-    margin: 0;
+    float: left;
     width: 1.6rem;
     height: .7rem;
     border-radius: 16px;
@@ -586,28 +608,32 @@
     position: relative;
     color: #666;
 }
+
 input[name=agreement] {
     display: none;
 }
 
 input[name=agreement] + label:before {
     content: '';
-    position: absolute;
-    top: -2px;
-    left: -20px;
-    background-color: #fafafa;
-    border: 1px solid #cacece;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
-    padding: 7px;
+    position: relative;
+    top: 4px;
+    left: -5px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     display: inline-block;
+    background-color: #FFF;
+    border: 1px solid #ccc;
 }
 
 input[name=agreement]:checked + label:after {
-    content: '\2714';
-    font-size: 14px;
+    content: ''; /*勾选符号*/
     position: absolute;
-    top: -4px;
-    left: -17px;
-    color: #99a1a7;
+    display: block;
+    top: 2px;
+    left: -2px;
+    width: 12px;
+    height: 9px;
+    background: url("../images/checked.png") center;
+    background-size: cover;
 }

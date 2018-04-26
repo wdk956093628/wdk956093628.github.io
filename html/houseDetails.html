@@ -46,6 +46,8 @@
                     <span class="house-modelName tag"></span>
                     <span class="house-modelType tag"></span>
                 </div>
+                <input type="hidden" name="buildingNo" value="">
+                <input type="hidden" name="unit" value="">
             </div>
             <!--楼盘信息-->
             <ul class="houseInfo bdr1">
@@ -66,28 +68,6 @@
         <div class="refresh"><img src="../staic/images/refresh.png" alt="refresh"></div>
 
         <div class="mask">
-            <!--底部弹出框-->
-            <div class="house-dialog hide">
-                <!-- 显示楼盘名称，状态 -->
-                <div class="dialog-top">
-                    <span class="houseName"></span>
-                    <span class="check-details">查看详情</span>
-                </div>
-                <div class="dialog-middle">
-                    <span class="typeNum"></span>
-                    <span class="houseType"></span>
-                    <span class="houseArea"></span>
-                    <span class="unitPrice"></span>
-                </div>
-                <p class="price"><span class="price-icon">￥</span><span class="house-price"></span>万</p>
-                <div class="dialog-bottom">
-                    <button type="button" class="but addCart">加入购物车</button>
-                    <button type="button" class="buyHouse">立即购买<span class="buy-order">（未开放）</span></button>
-                    <button type="button" class="but buyHouse-active hide">开始抢房<span class="buy-order">(您当前排在<b class="orderNum"></b>位)</span></button>
-                </div>
-                <div class="close house-close"></div>
-            </div>
-
             <!--弹出框 去购物车-->
             <div class="houseDetail-dialog houseToCart hide">
                 <div class="house-content">

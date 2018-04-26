@@ -149,7 +149,6 @@ function orderDetails() {
         },
         success: function (data) {
             data = JSON.parse(data);
-            console.log(data)
             Model_query(data.modelName);
             $.each(data, function (i, o) {
                 $(".houseName").html(o.projectName + o.buildingNo + '栋' + o.unit + '单元' + o.productName + '室');
@@ -176,7 +175,7 @@ function orderDetails() {
                     $(".deal-icon").addClass("deal-success");
                     $(".deal-tip").html('恭喜您，认购成功');
                     $(".passTime").html(confirmTime);
-                } else if (productStatus == 2) {
+                } else if (productStatus == 2 || 3) {
                     $(".deal-icon").addClass("deal-fail");
                     $(".deal-tip").html('抱歉，认购失败');
                     $(".passTime").html(confirmTime);

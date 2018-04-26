@@ -9,7 +9,6 @@ var userId = -1;
 var productId;
 var customerId;
 var token;
-var animatedCount;
 
 $(function () {
 
@@ -29,7 +28,7 @@ $(function () {
     // 底部抢房成功通知(30s刷新)
     setInterval(function () {
         dealSuccess();
-    }, 3*1000);
+    }, 3 * 1000);
 
 
     // 选择楼栋
@@ -45,6 +44,7 @@ $(function () {
     $(".unit").on('click', 'li', function () {
         $(this).addClass("active").siblings().removeClass("active");
         unit = $(this).val();
+        buildingNo = $(".active").val();
         Product_queryArray();
     });
 
@@ -71,7 +71,6 @@ $(function () {
                 YDUI.dialog.loading.close();
                 DealFromProduct();
             }, 1000);
-            $(".mask").hide();
             $(".dealAgreement").addClass('hide');
             $(".agreement").prop('checked', false);
         } else {
@@ -80,8 +79,10 @@ $(function () {
     });
 
     //好的按钮
-    $(".cancel").on('touchstart', function () {
+    $(".cancel").on('click', function (e) {
+        e.stopPropagation()
         $(".mask").hide();
+        $(".house-dialog").addClass('hide');
         $(".houseToCart").addClass('hide');
         $(".houseToOrder").addClass('hide');
         $(".dealAgreement").addClass('hide');
@@ -137,6 +138,7 @@ function CheckToken() {
     })
 }
 
+//查询客户序号
 function Customer_query() {
     $.ajax({
         url: url + "Customer_query",
@@ -225,11 +227,13 @@ function Product_queryArray() {
             var productArr = [];
             var productNameArr = [];
             data = JSON.parse(data);
+
             $(".loudongTip").html(buildingNo + '栋' + ' - ' + unit + '单元');
+
             $.each(data, function (i, o) {
                 sideCount.push(o.floorCount);
                 productArr.push(o.productName.slice(-2));
-                productNameArr.push(o.productName);
+                productNameArr.unshift(o.productName);
             });
 
             //根据总楼层的最大值判断侧边栏高度和行数
@@ -254,10 +258,31 @@ function Product_queryArray() {
                         col += "<div class='house-item'><span class='houseNum'>" +
                             (sidebarH - index) + (j + 1) + "</span></div>";
                     }
-
                 }
                 $(this).html(col);
-                //点击房源
+            });
+
+            // 对比生成的div和房源.把无效的房源隐藏
+            var houseNumArr = "";
+            $(".houseNum").each(function () {
+                houseNumArr = $(this).html();
+                if (productNameArr.indexOf(houseNumArr) < 0) {
+                    $(this).html('');
+                    $(this).parents(".house-item").off('click');
+                }
+            });
+
+            //渲染房源状态
+            $.each(data, function (i, o) {
+                if (o.productStatus == 0) {
+                    $(".houseNum").filter(":contains(" + o.productName + ")").last().parent(".house-item").attr("value", o.productId).addClass("yixuan");
+                } else if (o.productStatus == 1) {
+                    $(".houseNum").filter(":contains(" + o.productName + ")").last().parent(".house-item").attr("value", o.productId).addClass("yishou");
+                } else if (o.productStatus == 2) {
+                    $(".houseNum").filter(":contains(" + o.productName + ")").last().parent(".house-item").attr("value", o.productId).addClass("keshou");
+                } else if (o.productStatus == 3) {
+                    $(".houseNum").filter(":contains(" + o.productName + ")").last().parent(".house-item").attr("value", o.productId).addClass("keshou");
+                }
             });
 
             //绑定房源点击
@@ -269,24 +294,14 @@ function Product_queryArray() {
                 Properties_query();
             });
 
-            // 对比生成的div和房源
-            var houseNumArr = "";
-            $(".houseNum").each(function () {
-                houseNumArr = $(this).html();
-                if (productNameArr.indexOf($(this).html()) < 0) {
-                    $(this).html('');
-                    $(this).parents(".house-item").off('click');
-                }
+            // 点击效果
+
+            $(".house-item").on('touchstart',function () {
+                $(this).addClass('house-item-active');
             });
 
-            $.each(data, function (v, o) {
-                if (o.productStatus == 0) {
-                    $(".houseNum").filter(":contains(" + o.productName + ")").first().parent(".house-item").attr("value", o.productId).addClass("yixuan");
-                } else if (o.productStatus == 1) {
-                    $(".houseNum").filter(":contains(" + o.productName + ")").first().parent(".house-item").attr("value", o.productId).addClass("yishou");
-                } else if (o.productStatus == 2 ||3) {
-                    $(".houseNum").filter(":contains(" + o.productName + ")").first().parent(".house-item").attr("value", o.productId).addClass("keshou");
-                }
+            $(".house-item").on('touchend',function () {
+                $(this).removeClass('house-item-active');
             });
 
         }
@@ -294,7 +309,7 @@ function Product_queryArray() {
 }
 
 // 抢房成功通知
-function  dealSuccess() {
+function dealSuccess() {
     $.ajax({
         url: url + "Deal_query",
         type: "get",
@@ -307,8 +322,8 @@ function  dealSuccess() {
         success: function (data) {
             var su = [];            //存放已同意的订单信息
             data = JSON.parse(data);
-            $.each(data,function (i,o) {
-                if(o.productStatus == 1){
+            $.each(data, function (i, o) {
+                if (o.productStatus == 1) {
                     su.push(this)
                 }
             });
@@ -357,7 +372,6 @@ function ProductDetails() {
             modelId: modelId
         },
         success: function (data) {
-            // ProjectInfo_query();
             data = JSON.parse(data)[0];
             $(".houseName").html(data.projectName + data.buildingNo + '栋' + data.unit + '单元' + data.productName + '室');
             $(".typeNum").html(data.modelName);
@@ -367,6 +381,9 @@ function ProductDetails() {
             $(".house-price").html((data.totalMoney / 1).toFixed(2));
             $(".check-details").attr("value", data.productId);
             $(".orderNum").html(sortIndex);
+            //楼栋单元
+            $('input[name=buildingNo]').val(data.buildingNo);
+            $('input[name=unit]').val(data.unit);
             if (data.productStatus == 0) {
                 $(".buyHouse").show();
                 $(".buyHouse-active").addClass('hide');
@@ -404,8 +421,8 @@ function ProjectInfo_query() {
                 $(".buyHouse").hide();
                 $(".buyHouse-active").removeClass('hide');
             } else {
-                $(".buyHouse").show();
                 $(".buyHouse-active").addClass('hide');
+                $(".buyHouse").show();
             }
         }
     })
@@ -445,6 +462,9 @@ function Cart_add() {
 
 //购买房源协议弹框
 function deal_agreement() {
+    buildingNo = $("input[name=buildingNo]").val();
+    unit = $("input[name=unit]").val();
+
     $.ajax({
         url: url + "Product_queryArray",
         type: "get",
@@ -485,18 +505,24 @@ function DealFromProduct() {
         },
         success: function (data) {
             if (data >= 0) {
-                YDUI.dialog.toast('提交成功', 'success', 1000);
-                setTimeout(function () {
+                if(window.location.search == ""){
                     Product_queryArray();
+                }else{
                     Product_queryCartCount();
-                },1000)
+                }
+                $(".houseToOrder").removeClass('hide');
+                $(".house-tip").html("购买成功！");
             } else if (data == -104) {
+                $(".mask").hide();
                 YDUI.dialog.toast('认购数量达到上限', 'error', 1000);
             } else if (data == -101) {
+                $(".mask").hide();
                 YDUI.dialog.toast('您暂时不能购买', 'error', 2000);
             } else if (data == -102) {
+                $(".mask").hide();
                 YDUI.dialog.toast('该房源已售或者待售', 'error', 1000);
             } else {
+                $(".mask").hide();
                 YDUI.dialog.toast('提交失败', 'error', 1000);
             }
         }
@@ -515,46 +541,54 @@ function Product_queryCartCount() {
             productId: productId
         },
         success: function (data) {
-            data = JSON.parse(data);
-            $.each(data, function (i, o) {
-                $(".houseName").html(o.projectName + o.buildingNo + '栋' + o.unit + '单元' + o.productName + '室');
-                $(".house-modelName").html(o.modelName + '户型');
-                $(".house-modelType").html(o.modelType);
-                $(".addCartCount").html('(' + o.cartProductCount + ')');
-                $(".houseTotal").html((o.totalMoney / 1).toFixed(2) + '万');
-                $(".builtArea").html((o.area / 1).toFixed(2) + '㎡');
-                $(".builtUnitPrice").html('￥' + (o.totalMoney / o.area).toFixed(2) + '万/m²');
-                $(".orientation").html('朝' + o.orientation);
-                $(".floorIndex").html(o.floorIndex + '层');
-                if (o.decorateMode == 0) {
-                    $(".decorateMode").html("毛胚");
-                } else if (o.decorateMode == 1) {
-                    $(".decorateMode").html("简装");
-                } else if (o.decorateMode == 2) {
-                    $(".decorateMode").html("精装");
-                }
-                //户型介绍
-                $(".houseIntroduce").html(o.reference);
-                // 房源图片
-                Model_query(o.modelName);
+            o = JSON.parse(data)[0];
+            $(".houseName").html(o.projectName + o.buildingNo + '栋' + o.unit + '单元' + o.productName + '室');
+            $(".house-modelName").html(o.modelName + '户型');
+            $(".house-modelType").html(o.modelType);
+            $(".addCartCount").html('(' + o.cartProductCount + ')');
+            $(".houseTotal").html((o.totalMoney / 1).toFixed(2) + '万');
+            $(".builtArea").html((o.area / 1).toFixed(2) + '㎡');
+            $(".builtUnitPrice").html('￥' + (o.totalMoney / o.area).toFixed(2) + '万/m²');
+            $(".orientation").html(o.orientation);
+            $(".floorIndex").html(o.floorIndex + '层');
+            if (o.decorateMode == 0) {
+                $(".decorateMode").html("毛胚");
+            } else if (o.decorateMode == 1) {
+                $(".decorateMode").html("简装");
+            } else if (o.decorateMode == 2) {
+                $(".decorateMode").html("精装");
+            }
 
-                Properties_query();
+            //楼栋单元
+            $('input[name=buildingNo]').val(o.buildingNo);
+            $('input[name=unit]').val(o.unit);
 
-                if (o.productStatus == 0) {
-                    $(".buyHouse").show();
-                    $(".buyHouse-active").addClass('hide');
-                    $(".buyHouse").attr("disabled", "disabled");
-                    $(".buyHouse").html("该房源待售");
-                } else if (o.productStatus == 1) {
-                    $(".buyHouse").show();
-                    $(".buyHouse-active").addClass('hide');
-                    $(".buyHouse").attr("disabled", "disabled");
-                    $(".buyHouse").html("该房源已售");
-                } else if (o.productStatus == 2) {
-                    $(".buyHouse").hide();
-                    $(".buyHouse-active").removeClass('hide');
-                }
-            })
+            //户型介绍
+            $(".houseIntroduce").html(o.reference);
+            // 房源图片
+            Model_query(o.modelName);
+            //判断秒开
+            Properties_query();
+
+            if (o.productStatus == 0) {
+                $(".buyHouse-active").addClass('hide');
+                $(".buyHouse").show();
+                $(".buyHouse").attr("disabled", "disabled");
+                $(".buyHouse").html("该房源待售");
+            } else if (o.productStatus == 1) {
+                $(".buyHouse-active").addClass('hide');
+                $(".buyHouse").show();
+                $(".buyHouse").attr("disabled", "disabled");
+                $(".buyHouse").html("该房源已售");
+            } else if (o.productStatus == 2) {
+                $(".buyHouse").hide();
+                $(".buyHouse-active").removeClass('hide');
+            }
+
+            var dd = "";
+            dd += '<input type="hidden" name="buildingNo" value="'+o.buildingNo+'">';
+            dd += '<input type="hidden" name="unit" value="'+o.unit+'">';
+            $(".house-indication").append(dd);
         }
     })
 }

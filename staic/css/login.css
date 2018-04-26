@@ -110,7 +110,10 @@ label[for="verify"] .inputBox{
 /*}*/
 
 .login_but{
-    margin-top: 0.5rem;
+    margin-top: .2rem;
+    left: 0;
+    right: 0;
+    bottom: .5rem;
     width: 301px;
     height: 50px;
 }

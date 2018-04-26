@@ -91,11 +91,11 @@
 
 .banner-title {
     position: relative;
-    margin-bottom: 0.3rem;
+    margin-bottom: .3rem;
     width: 100%;
     height: 1.05rem;
     color: #333;
-    box-shadow: inset 0 -1px 1px -1px #ddd;
+    box-shadow: inset 0 -1px 1px -1px #bbb;
 }
 
 /* 楼盘名称 状态 */
@@ -142,13 +142,13 @@
 
 .type-tag {
     width: 100%;
-    height: .7rem;
+    height: auto;
     line-height: .7rem;
 }
 
 .tag {
     display: inline-block;
-    padding: 1px 3px;
+    padding: 3px 11px;
     margin-right: .16rem;
     text-align: center;
     line-height: .4rem;
@@ -157,26 +157,16 @@
     border-radius: 3px;
 }
 
-.tag:first-child {
+.type-tag .tag {
     color: #ff6262;
     background-color: rgba(255, 99, 99, .08);
-}
-
-.tag:nth-child(2) {
-    color: #fe7e4e;
-    background-color: rgba(254, 126, 78, .08);
-}
-
-.tag:nth-child(3) {
-    color: #f073ff;
-    background-color: rgba(240, 114, 255, .08);
 }
 
 .house-adress {
     width: 100%;
     height: .96rem;
     line-height: .96rem;
-    box-shadow: inset 0 1px 1px -1px #ededed;
+    box-shadow: inset 0 1px 1px -1px #bbbbbb;
 }
 
 .location {
@@ -203,6 +193,7 @@
     background-size: cover;
 }
 
+
 .sequence b {
     font-size: .35rem;
 }
@@ -218,6 +209,12 @@
 .sequence span:last-child {
     font-size: .24rem;
     color: #fff;
+}
+
+/*秒开*/
+
+.skipMode{
+    font-size: .3rem !important;
 }
 
 /* 开盘规则 */
@@ -363,6 +360,15 @@
     padding: .2rem .3rem;
     background-color: #fff;
     box-shadow: 0 -1px 3px 0 rgba(242, 242, 242, .75);
+}
+
+.logoutBtn{
+    margin: auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 1.2rem;
+    color: #eee;
 }
 
 /*摇号成功提示框*/

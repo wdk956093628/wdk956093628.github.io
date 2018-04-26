@@ -32,35 +32,35 @@ $(document).ready(function () {
 
     CheckToken();
 
-    // 验证手机号码
-    $("#telephone").blur(function () {
-        var tel = $(this).val();
-        var reg = /^1[34578][0-9]{9}$/;
-        if (tel.length > 0) {
-            if (!reg.test(tel)) {
-                $(".psdTip").html("*请输入正确的手机号码");
-            }
-        } else {
-            $(".psdTip").html("*请输入手机号码");
-        }
-    }).focus(function () {
-        $(".psdTip").html("");
-    });
+    // // 验证手机号码
+    // $("#telephone").blur(function () {
+    //     var tel = $(this).val();
+    //     var reg = /^1[34578][0-9]{9}$/;
+    //     if (tel.length > 0) {
+    //         if (!reg.test(tel)) {
+    //             $(".psdTip").html("*请输入正确的手机号码");
+    //         }
+    //     } else {
+    //         $(".psdTip").html("*请输入手机号码");
+    //     }
+    // }).focus(function () {
+    //     $(".psdTip").html("");
+    // });
 
     // 验证身份证号码
-    $("#id_card").blur(function () {
-        var idval = $(this).val();
-        var reg2 = /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
-        if (idval.length > 0) {
-            if (!reg2.test(idval)) {
-                $(".psdTip").html("*请输入正确的身份证号码");
-            }
-        } else {
-            $(".psdTip").html("*请输入身份证号码");
-        }
-    }).focus(function () {
-        $(".psdTip").html("");
-    });
+    // $("#id_card").blur(function () {
+    //     var idval = $(this).val();
+    //     // var reg2 = /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+    //     if (idval.length > 0 && idval.length<18) {
+    //         // if (!reg2.test(idval)) {
+    //         //     $(".psdTip").html("*请输入正确的身份证号码");
+    //         // }
+    //     } else {
+    //         $(".psdTip").html("*请输入正确的身份证号码");
+    //     }
+    // }).focus(function () {
+    //     $(".psdTip").html("");
+    // });
 
     /*获取短信验证码倒计时*/
     /* 定义参数 */
@@ -78,11 +78,15 @@ $(document).ready(function () {
     $getCode.on('touchstart', function () {
         phone = $("#telephone").val();
         idCard = $("#id_card").val();
-        if (click1 == 0) {
-            if (phone != "" && idCard != "") {
-                storeShortCode();
+        if (click1 == 0) {//判断重复提交
+            if (phone.length == 11 ) {//判断手机号位数
+               if(idCard.length == 18){//判断身份证号码位数
+                   storeShortCode();
+               }else{
+                   YDUI.dialog.toast('请输入正确的身份证号码', 'none', 1000);
+               }
             } else {
-                YDUI.dialog.toast('请输入完整信息', 'none', 1000);
+                YDUI.dialog.toast('请输入正确的手机号码', 'none', 1000);
             }
             click1 = 1;
             setTimeout(function () {
@@ -99,7 +103,7 @@ $(document).ready(function () {
         if (phone != "" && idCard != "" && shortCode != "") {
             CheckShortCode();
         } else {
-            YDUI.dialog.toast('请输入完整信息', 'none', 1000);
+            YDUI.dialog.toast('请输入正确信息', 'none', 1000);
         }
     });
 });
@@ -168,6 +172,7 @@ function CheckShortCode() {
         success: function (data) {
             if (data) {
                 localStorage.setItem('token', data);   //将获取到的token保存到localStorage
+                $.cookie('token',data,{path: '/'});
                 YDUI.dialog.loading.open('登陆中');
                 setTimeout(function () {
                     YDUI.dialog.loading.close();       /* 移除loading */

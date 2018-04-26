@@ -26,7 +26,7 @@
     </div>
 
     <!--编辑栏-->
-    <div class="bottom">
+    <div class="bottom editOrder hide">
         <button class="edit">编辑</button>
         <button class="but submit">提交订单</button>
     </div>
@@ -118,11 +118,11 @@
     };
 
     // 按下排序禁止页面滑动事件
-    // $(".banner").on("touchmove", function (e) {
-    //     if (e.target.className.indexOf("cartContainer") >= 0) {
-    //         e.preventDefault();
-    //     }
-    // });
+    $(".banner").on("touchmove", function (e) {
+        if (e.target.className.indexOf("cartContainer") >= 0) {
+            e.preventDefault();
+        }
+    });
 
 </script>
 </body>

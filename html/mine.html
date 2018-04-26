@@ -18,7 +18,7 @@
 <section class="g-flexview">
     <!--头部-->
     <header class="m-navbar nomargin">
-    <div class="navbar-center"><span class="navbar-title">个人中心</span></div>
+        <div class="navbar-center"><span class="navbar-title">个人中心</span></div>
     </header>
     <!--内容-->
     <div class="g-scrollview">
@@ -39,9 +39,22 @@
             </ul>
         </div>
         <!--退出登陆-->
-        <div class="bottom">
+        <div class="bottom logoutBtn">
             <button type="button" class="logout">退出登陆</button>
         </div>
+
+        <div class="mask">
+            <!--退出确认-->
+            <div class="logout-dialog">
+                <span class="logout-tip">确认退出？</span>
+                <div class="logout-btns">
+                    <button class="cancel">取消</button>
+                    <button class="but logout-confirm">退出</button>
+                </div>
+                <div class="close"></div>
+            </div>
+        </div>
+
     </div>
     <!--导航-->
     <footer class="m-tabbar">
@@ -76,6 +89,7 @@
 </section>
 <!--尾部js-->
 <script type="text/javascript" src="../staic/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../staic/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="../staic/ydui/js/ydui.js"></script>
 <script type="text/javascript" src="../staic/js/public.js"></script>
 <script type="text/javascript" src="../staic/js/mine.js"></script>

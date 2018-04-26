@@ -181,9 +181,9 @@ function Cart_query() {
                     list += '<input type="hidden" name="sortIndex" value="' + s.sortIndex + '"></div>';
                 });
                 $(".shopCart-container").append(list);
+                $(".editOrder").show();
                 Customer_query();
             } else {
-                $(".bottom").hide();
                 $(".shopCart-container").html("<p class='noCartTip'>当前购物车没有房源</p>");
             }
         }

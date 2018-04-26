@@ -142,27 +142,46 @@ function Model_query() {
             data = JSON.parse(data);
             var list = "";
             var tag = "";
-            //户型信息
-            $.each(data, function (i, o) {
-                //户型图片
-                getModelphoto(o.pictures);
+            if(data.length >0){
                 //户型信息
-                list += '<div class="ht-item swiper-slide">';
-                list += '<div class="floor-plans">';
-                list += '<span class="typeCode">' + o.modelName + '</span>';
-                list += '<img class="ht-img" src="" alt="户型图">';
-                list += '</div>';
-                list += '<p class="huxing-info"><span class="houseType">' + o.modelType + '</span>';
-                list += '<p><span class="houseAmount">共' + o.count + '套</span></p>';
-                list += '</div>';
-            });
-            $(".ht-content").html(list);
+                $.each(data, function (i, o) {
+                    //户型图片
+                    getModelphoto(o.pictures);
+                    //户型信息
+                    list += '<div class="ht-item swiper-slide">';
+                    list += '<div class="floor-plans">';
+                    list += '<span class="typeCode">' + o.modelName + '</span>';
+                    list += '<img class="ht-img" src="" alt="户型图">';
+                    list += '</div>';
+                    list += '<p class="huxing-info"><span class="houseType">' + o.modelType + '</span>';
+                    list += '<p><span class="houseAmount">共' + o.count + '套</span></p>';
+                    list += '</div>';
+                });
+                $(".ht-content").html(list);
 
-            // 楼盘户型标签
-            $.each(data.splice(0, 3), function (i, o) {
-                tag += '<span class="tag">' + o.modelType + '</span>';
-            });
-            $(".type-tag").html(tag);
+                // 楼盘户型标签
+                var modelTypeArr = [];
+                $.each(data, function (i, o) {
+                    modelTypeArr.push(o.modelType);
+                });
+
+                //户型标签去重
+                var resultArr = [];
+                modelTypeArr.forEach(function (v,i,arr) {
+                    if(arr.indexOf(v,i+1) === -1){
+                        resultArr.push(v)
+                    }
+                });
+
+                $.each(resultArr,function (i,o) {
+                    tag += '<span class="tag">' + o+ '</span>';
+                });
+                $(".type-tag").html(tag);
+
+            }else{
+                $(".swiper-pagination").hide();
+                $(".ht-content").html('暂时没有房源信息')
+            }
         }
     });
 }

@@ -106,3 +106,54 @@
     rgba(211, 217, 219, 0.5);
     border-radius: 25px;
 }
+
+.logout-dialog{
+    margin: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 5rem;
+    height: 6rem;
+    text-align: center;
+    background: url(../images/house-dialog.png) center no-repeat;
+    background-size: contain;
+    z-index: 1000;
+}
+
+.close{
+    position: absolute;
+    top: -15px;
+    right: 15px;
+}
+
+.logout-tip{
+    display: inline-block;
+    height: .5rem;
+    font-size: .3rem;
+    margin-top: 3.2rem;
+    margin-bottom: .62rem;
+}
+
+.logout-btns{
+    height: .7rem;
+    padding: 0 .65rem;
+}
+
+.cancel{
+    float: left;
+    width: 1.6rem;
+    height: .7rem;
+    font-size: .3rem;
+    border-radius: 16px;
+    border: solid 1px #bbbbbb;
+}
+
+.logout-confirm{
+    float: right;
+    width: 1.6rem;
+    height: .7rem;
+    font-size: .3rem;
+    border-radius: 16px;
+}

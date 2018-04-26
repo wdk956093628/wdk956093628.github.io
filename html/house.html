@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="../staic/css/reset.css">
     <link rel="stylesheet" href="../staic/css/home.css">
     <link rel="stylesheet" href="../staic/css/house.css">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css">
 </head>
 <body>
 <section class="g-flexview">
@@ -77,12 +76,14 @@
                 <span class="unitPrice"></span>
             </div>
             <p class="price"><span class="price-icon">￥</span><span class="house-price"></span>万</p>
-            <div class="dialog-bottom">
+            <div class="dialog-bottom noShadow">
                 <button type="button" class="but addCart">加入购物车</button>
                 <button type="button" class="buyHouse">立即购买<span class="buy-order">（未开放）</span></button>
                 <button type="button" class="but buyHouse-active hide">开始抢房<span class="buy-order">(您当前排在<b class="orderNum"></b>位)</span></button>
             </div>
             <div class="close house-close"></div>
+            <input type="hidden" name="buildingNo" value="">
+            <input type="hidden" name="unit" value="">
         </div>
 
         <!--弹出框 去购物车-->
@@ -148,5 +149,11 @@
 <script type="text/javascript" src="../staic/ydui/js/ydui.js"></script>
 <script type="text/javascript" src="../staic/js/public.js"></script>
 <script type="text/javascript" src="../staic/js/house.js"></script>
+<script type="text/javascript">
+    //阻止长按菜单
+    document.oncontextmenu = function (e) {
+        e.preventDefault();
+    };
+</script>
 </body>
 </html>

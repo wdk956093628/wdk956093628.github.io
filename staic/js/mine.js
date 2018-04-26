@@ -5,17 +5,33 @@ $(function () {
     CheckToken();
 
     // 退出登陆
-    $(".logout").on('touchstart', function () {
-        // $.removeCookie('token', {path: '/'});
+    $(".logout").on('touchstart',function () {
+       $(".mask").show();
+    });
+
+    $(".logout-confirm").on('touchstart',function () {
+        $.removeCookie('token', {path: '/'});
         localStorage.removeItem('token');
         window.location.href = "./login.html";
-    })
+    });
 
+    $(".close").on('touchstart',function () {
+        $(".mask").hide();
+    });
+
+    $(".cancel").on('touchstart',function () {
+        $(".mask").hide();
+    });
 
 });
 
 function CheckToken() {
-    token = localStorage.getItem('token');
+    try {
+        token = localStorage.getItem('token');
+    } catch(e) {
+        token = $.cookie('token');
+    }
+
     $.ajax({
         url: url+"CheckToken",
         type: "get",
